@@ -68,7 +68,6 @@ Node* Database::insert(Node* node, const string& carNumber, const string& violat
         node->right = insert(node->right, carNumber, violationDetails);
     }
     else {
-        // Car number already exists, add violation to the list
         Violation* newViolation = new Violation(violationDetails);
         newViolation->nextViolation = node->violationsList;
         node->violationsList = newViolation;
